@@ -14,10 +14,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "Book created"
+      flash[:success] = "Book created"
       redirect_to @book
     else
-      flash[:alert] = "Could not save book"
+      flash.now[:danger] = "Could not save book"
       render :new
     end
   end
@@ -29,10 +29,10 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])    
     if @book.update_attributes(book_params)
-      flash[:notice] = "Book Updated"
+      flash[:success] = "Book Updated"
       redirect_to @book
     else
-      flash[:alert] = "Could not update book"
+      flash.now[:danger] = "Could not update book"
       render :edit
     end
   end
@@ -43,7 +43,7 @@ class BooksController < ApplicationController
       flash[:success] = "Book Destroyed"
       redirect_to books_path
     else
-      flash[:alert] = "Could not destroy book"
+      flash[:danger] = "Could not destroy book"
       redirect_to books_path
     end
   end
