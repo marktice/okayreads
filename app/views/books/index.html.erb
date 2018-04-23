@@ -1,17 +1,24 @@
 <h1>All Our Books</h1>
 
-<%= link_to 'Add Book', new_book_path %>
+<%= link_to 'Add Book', new_book_path, class: 'btn btn-primary' %>
 
-<% @books.each do |book| %>
-  <ul>
-    <li><%= book.title %></li>
-    <li><%= book.author %></li>
-    <li><%= book.description %></li>
-    <li><%= book.genre %></li>
-    <li><%= book.year %></li>
-    <li><%= link_to 'Edit', edit_book_path(book) %></li>
-    <% if current_user.admin? %>
-      <li><%= link_to 'Delete', book_path(book), method: :delete %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="card-deck">
+  <% @books.each do |book| %>
+    <div class="card bg-light mb-3" style="min-width: 18rem;">
+      <div class="card-header"><%= book.author %></div>
+      <div class="card-body">    
+        <h5 class="card-title"><%= book.title %></h5>
+        <p class="card-text"><%= book.description %></p>
+        <p class="card-text"><%= book.genre %></p>
+        <p class="card-text"><%= book.year %></p>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Details', book_path(book), class: 'btn btn-primary' %>
+        <% if current_user.admin? %>
+          <%= link_to 'Edit', edit_book_path(book), class: 'card-link' %>
+          <%= link_to 'Delete', book_path(book), method: :delete, class: 'card-link' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

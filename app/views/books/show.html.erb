@@ -1,17 +1,15 @@
-<ul>
-  <li>
-    <%= @book.title %>
-  </li>
-  <li>
-    <%= @book.author %>
-  </li>
-  <li>
-    <%= @book.description %>
-  </li>
-  <li>
-    <%= @book.genre %>
-  </li>
-  <li>
-    <%= @book.year %>
-  </li>
-</ul>
+<div class="card bg-light mb-3" style="min-width: 18rem;">
+  <div class="card-header"><%= @book.author %></div>
+  <div class="card-body">    
+    <h5 class="card-title"><%= @book.title %></h5>
+    <p class="card-text"><%= @book.description %></p>
+    <p class="card-text"><%= @book.genre %></p>
+    <p class="card-text"><%= @book.year %></p>
+  </div>
+  <div class="card-footer">
+    <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_book_path(@book), class: 'card-link' %>
+      <%= link_to 'Delete', book_path(@book), method: :delete, class: 'card-link' %>
+    <% end %>
+  </div>
+</div>
