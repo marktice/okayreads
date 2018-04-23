@@ -1,0 +1,24 @@
+<%= form_with model: @profile, url: profile_path, local: true do |form| %>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+  <br>
+  <%= form.label :street_address %>
+  <%= form.text_field :street_address %>
+  <br>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+  <br>
+  <%= form.label :state %>
+  <%= form.text_field :state %>
+  <br>
+  <%= form.label :postcode %>
+  <%= form.text_field :postcode %>
+  <br>
+  <%= form.label :country %>
+  <%= form.country_select :country_code, priority_countries: ["AU", "NZ"] %>
+  <br>
+  <%= form.submit %>
+<% end %>

@@ -1,4 +1,4 @@
-# User.create!(
+# mark = User.create!(
 #   email: 'markthomastice@gmail.com',
 #   password: 'password123',
 #   admin: true
