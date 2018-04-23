@@ -10,6 +10,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'faker'
 gem 'geocoder', '~> 1.4', '>= 1.4.7'
 gem 'pundit', '~> 1.1'
+gem 'mailgun-ruby', '~> 1.1', '>= 1.1.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -39,13 +40,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.3'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'dotenv', '~> 2.3'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
