@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'country_select', '~> 3.1', '>= 3.1.1'
 gem "shrine"
+gem "image_processing", "~> 1.0"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
