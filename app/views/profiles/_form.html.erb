@@ -5,6 +5,10 @@
   <%= form.label :last_name %>
   <%= form.text_field :last_name %>
   <br>
+  <%= form.label :profile_picture %>
+  <%= form.hidden_field :image, value: @profile.cached_image_data %>
+  <%= form.file_field :image %>
+  <br>
   <%= form.label :street_address %>
   <%= form.text_field :street_address %>
   <br>

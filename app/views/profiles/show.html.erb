@@ -10,6 +10,8 @@
     <%= @profile.country_code %>
   </p>
   <p><%= @profile.latitude %>, <%= @profile.longitude %></p>
+  <%= image_tag @profile.image_url, width: 300 %>
+
 <% end %>
 
 <%= link_to 'Edit', profile_edit_path, class: 'btn btn-primary' %>

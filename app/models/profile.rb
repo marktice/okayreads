@@ -11,6 +11,8 @@ class Profile < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
+  include ImageUploader::Attachment.new(:image) # adds an `image` virtual attribute
+
   def full_address
     "#{street_address}, #{city}, #{state}, #{postcode}, #{country_code}"
   end

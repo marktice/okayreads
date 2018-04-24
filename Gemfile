@@ -14,6 +14,7 @@ gem 'mailgun-ruby', '~> 1.1', '>= 1.1.9'
 gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'country_select', '~> 3.1', '>= 3.1.1'
+gem "shrine"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

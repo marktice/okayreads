@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit([
       :first_name, 
       :last_name,
+      :image,
       :street_address,
       :city,
       :state,
