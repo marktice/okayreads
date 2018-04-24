@@ -21,6 +21,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def admin
+    @users = User.all
+  end
+
   private
   def email_params
     params.require(:contact).permit(:name, :message)

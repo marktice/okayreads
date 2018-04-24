@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get '/contact', to: 'pages#contact'
   post '/contact', to: 'pages#contact_email'
+  get '/admin', to: 'pages#admin'
 
   devise_for :users
   get   '/profile',       to: 'profiles#show'

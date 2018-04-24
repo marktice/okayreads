@@ -1,0 +1,13 @@
+<h1>Admin Corner</h1>
+
+<h5>Users</h5>
+<% @users.each do |user| %>
+  <div>
+    <%= user.profile.full_name %>
+    <br>
+    <%= user.email %>
+    <br>
+    <%= user.profile.full_address %>
+  </div>
+  <br>
+<% end %>
